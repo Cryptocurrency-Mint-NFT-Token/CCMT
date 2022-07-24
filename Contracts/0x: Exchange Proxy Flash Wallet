@@ -1,0 +1,176 @@
+# Palkeoramix decompiler. 
+
+const owner = 0xdef1c0ded9bec7f1a1670819833240f027b25eff
+
+#
+#  Regular functions
+#
+
+def _fallback() payable: # default function
+  revert
+
+def tokenFallback(address _from, uint256 _value, bytes _data): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 96
+  require _from == _from
+  require _data <= 18446744073709551615
+  require _data + 35 <ΓÇ▓ calldata.size
+  require _data.length <= 18446744073709551615
+  require _data + _data.length + 36 <= calldata.size
+
+def supportsInterface(bytes4 _interfaceId): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _interfaceId == Mask(32, 224, _interfaceId)
+  if 0x1ffc9a700000000000000000000000000000000000000000000000000000000 == Mask(32, 224, _interfaceId):
+      return True
+  if 0x4e2312e000000000000000000000000000000000000000000000000000000000 == Mask(32, 224, _interfaceId):
+      return True
+  return (0xc0ee0b8a00000000000000000000000000000000000000000000000000000000 == Mask(32, 224, _interfaceId))
+
+def onERC1155Received(address _param1, address _param2, uint256 _param3, uint256 _param4, bytes _param5): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 160
+  require _param1 == _param1
+  require _param2 == _param2
+  require _param5 <= 18446744073709551615
+  require _param5 + 35 <ΓÇ▓ calldata.size
+  require _param5.length <= 18446744073709551615
+  require _param5 + _param5.length + 36 <= calldata.size
+  return 0xf23a6e6100000000000000000000000000000000000000000000000000000000
+
+def onERC1155BatchReceived(address _param1, address _param2, uint256[] _param3, uint256[] _param4, bytes _param5): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 160
+  require _param1 == _param1
+  require _param2 == _param2
+  require _param3 <= 18446744073709551615
+  require _param3 + 35 <ΓÇ▓ calldata.size
+  require _param3.length <= 18446744073709551615
+  require _param3 + (32 * _param3.length) + 36 <= calldata.size
+  require _param4 <= 18446744073709551615
+  require _param4 + 35 <ΓÇ▓ calldata.size
+  require _param4.length <= 18446744073709551615
+  require _param4 + (32 * _param4.length) + 36 <= calldata.size
+  require _param5 <= 18446744073709551615
+  require _param5 + 35 <ΓÇ▓ calldata.size
+  require _param5.length <= 18446744073709551615
+  require _param5 + _param5.length + 36 <= calldata.size
+  return 0xbc197c8100000000000000000000000000000000000000000000000000000000
+
+def unknownb68df16d(uint256 _param1, array _param2) payable: 
+  require calldata.size - 4 >=ΓÇ▓ 64
+  require _param1 == addr(_param1)
+  require _param2 <= 18446744073709551615
+  require _param2 + 35 <ΓÇ▓ calldata.size
+  require _param2.length <= 18446744073709551615
+  require _param2 + _param2.length + 36 <= calldata.size
+  if caller != 0xdef1c0ded9bec7f1a1670819833240f027b25eff:
+      revert with 501504721, caller, 0xdef1c0ded9bec7f1a1670819833240f027b25eff
+  delegate addr(_param1) with:
+       gas gas_remaining wei
+      args _param2[all]
+  if not return_data.size:
+      if delegate.return_code:
+          return ' '
+      mem[128 len _param2.length] = _param2[all]
+      mem[_param2.length + 128] = 0
+      mem[ceil32(_param2.length) + 164] = this.address
+      mem[ceil32(_param2.length) + 196] = addr(_param1)
+      mem[ceil32(_param2.length) + 228] = 128
+      mem[ceil32(_param2.length) + 292] = _param2.length
+      mem[ceil32(_param2.length) + 324 len ceil32(_param2.length)] = _param2[all], mem[_param2.length + 128 len ceil32(_param2.length) - _param2.length]
+      if ceil32(_param2.length) > _param2.length:
+          mem[ceil32(_param2.length) + _param2.length + 324] = 0
+      mem[ceil32(_param2.length) + 260] = ceil32(_param2.length) + 160
+      mem[(2 * ceil32(_param2.length)) + 324] = _param2.length
+      mem[(2 * ceil32(_param2.length)) + 356 len ceil32(_param2.length)] = _param2[all], mem[_param2.length + 128 len ceil32(_param2.length) - _param2.length]
+      if ceil32(_param2.length) > _param2.length:
+          mem[(2 * ceil32(_param2.length)) + _param2.length + 356] = 0
+      mem[ceil32(_param2.length) + 128] = (2 * ceil32(_param2.length)) + 196
+      mem[ceil32(_param2.length) + 164 len 28] = addr(this.address) << 64
+      mem[ceil32(_param2.length) + 160 len 4] = 1642440498
+      revert with memory
+        from ceil32(_param2.length) + 160
+         len Mask(8 * -ceil32(_param2.length) + _param2.length + 32, 0, 0), mem[_param2.length + 160 len -_param2.length + ceil32(_param2.length)]
+  if delegate.return_code:
+      return Array(len=return_data.size, data=ext_call.return_data)
+  mem[ceil32(return_data.size) + 129 len _param2.length] = _param2[all]
+  mem[ceil32(return_data.size) + _param2.length + 129] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 165] = this.address
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 197] = addr(_param1)
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 229] = 128
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 293] = _param2.length
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 325 len ceil32(_param2.length)] = _param2[all], mem[ceil32(return_data.size) + _param2.length + 129 len ceil32(_param2.length) - _param2.length]
+  if ceil32(_param2.length) > _param2.length:
+      mem[ceil32(return_data.size) + ceil32(_param2.length) + _param2.length + 325] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 261] = ceil32(_param2.length) + 160
+  mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + 325] = return_data.size
+  mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + 357 len ceil32(return_data.size)] = ext_call.return_data * ceil32(return_data.size) - return_data.size, -(8 * ceil32(return_data.size) + -ceil32(return_data.size) + 31) + 256, _param2.length) >> -(8 * ceil32(return_data.size) + -ceil32(return_data.size) + 31) + 256
+  if ceil32(return_data.size) > return_data.size:
+      mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + return_data.size + 357] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 129] = ceil32(return_data.size) + ceil32(_param2.length) + 196
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 165 len 28] = addr(this.address) << 64
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 161 len 4] = 1642440498
+  revert with memory
+    from ceil32(return_data.size) + ceil32(_param2.length) + 161
+     len Mask(8 * -ceil32(_param2.length) + _param2.length + 32, 0, 0), mem[ceil32(return_data.size) + _param2.length + 161 len -_param2.length + ceil32(_param2.length)]
+
+def unknown54132d78(uint256 _param1, array _param2, uint256 _param3) payable: 
+  require calldata.size - 4 >=ΓÇ▓ 96
+  require _param1 == addr(_param1)
+  require _param2 <= 18446744073709551615
+  require _param2 + 35 <ΓÇ▓ calldata.size
+  require _param2.length <= 18446744073709551615
+  require _param2 + _param2.length + 36 <= calldata.size
+  if caller != 0xdef1c0ded9bec7f1a1670819833240f027b25eff:
+      revert with 501504721, caller, 0xdef1c0ded9bec7f1a1670819833240f027b25eff
+  call addr(_param1) with:
+     value _param3 wei
+       gas gas_remaining wei
+      args _param2[all]
+  if not return_data.size:
+      if ext_call.success:
+          return ' '
+      mem[128 len _param2.length] = _param2[all]
+      mem[_param2.length + 128] = 0
+      mem[ceil32(_param2.length) + 164] = this.address
+      mem[ceil32(_param2.length) + 196] = addr(_param1)
+      mem[ceil32(_param2.length) + 228] = 160
+      mem[ceil32(_param2.length) + 324] = _param2.length
+      mem[ceil32(_param2.length) + 356 len ceil32(_param2.length)] = _param2[all], mem[_param2.length + 128 len ceil32(_param2.length) - _param2.length]
+      if ceil32(_param2.length) > _param2.length:
+          mem[ceil32(_param2.length) + _param2.length + 356] = 0
+      mem[ceil32(_param2.length) + 260] = _param3
+      mem[ceil32(_param2.length) + 292] = ceil32(_param2.length) + 192
+      mem[(2 * ceil32(_param2.length)) + 356] = _param2.length
+      mem[(2 * ceil32(_param2.length)) + 388 len ceil32(_param2.length)] = _param2[all], mem[_param2.length + 128 len ceil32(_param2.length) - _param2.length]
+      if ceil32(_param2.length) > _param2.length:
+          mem[(2 * ceil32(_param2.length)) + _param2.length + 388] = 0
+      mem[ceil32(_param2.length) + 128] = (2 * ceil32(_param2.length)) + 228
+      mem[ceil32(_param2.length) + 164 len 28] = addr(this.address) << 64
+      mem[ceil32(_param2.length) + 160 len 4] = 2257868822
+      revert with memory
+        from ceil32(_param2.length) + 160
+         len Mask(8 * -ceil32(_param2.length) + _param2.length + 32, 0, 0), mem[_param2.length + 160 len -_param2.length + ceil32(_param2.length)]
+  if ext_call.success:
+      return Array(len=return_data.size, data=ext_call.return_data)
+  mem[ceil32(return_data.size) + 129 len _param2.length] = _param2[all]
+  mem[ceil32(return_data.size) + _param2.length + 129] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 165] = this.address
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 197] = addr(_param1)
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 229] = 160
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 325] = _param2.length
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 357 len ceil32(_param2.length)] = _param2[all], mem[ceil32(return_data.size) + _param2.length + 129 len ceil32(_param2.length) - _param2.length]
+  if ceil32(_param2.length) > _param2.length:
+      mem[ceil32(return_data.size) + ceil32(_param2.length) + _param2.length + 357] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 261] = _param3
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 293] = ceil32(_param2.length) + 192
+  mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + 357] = return_data.size
+  mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + 389 len ceil32(return_data.size)] = ext_call.return_data * ceil32(return_data.size) - return_data.size, -(8 * ceil32(return_data.size) + -ceil32(return_data.size) + 31) + 256, _param2.length) >> -(8 * ceil32(return_data.size) + -ceil32(return_data.size) + 31) + 256
+  if ceil32(return_data.size) > return_data.size:
+      mem[(2 * ceil32(_param2.length)) + ceil32(return_data.size) + return_data.size + 389] = 0
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 129] = ceil32(return_data.size) + ceil32(_param2.length) + 228
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 165 len 28] = addr(this.address) << 64
+  mem[ceil32(return_data.size) + ceil32(_param2.length) + 161 len 4] = 2257868822
+  revert with memory
+    from ceil32(return_data.size) + ceil32(_param2.length) + 161
+     len Mask(8 * -ceil32(_param2.length) + _param2.length + 32, 0, 0), mem[ceil32(return_data.size) + _param2.length + 161 len -_param2.length + ceil32(_param2.length)]
+
+
