@@ -1,8 +1,21 @@
-## Welcome to GitHub Pages
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8>
+    <meta property="og:title" content="CryptoCurrency Mint NFT Token" /> 
+      <meta property="og:description" content="image of One CryptocurrencyMintToken/CCMT." /> 
+      <meta property="og:image" https://photos.app.goo.gl/Ho3rUMMvSKZGSTLaA" 
+      <meta property="og:url" content="https://github.com/cryptocurrency-mint-nft-token/CCMT/index.html/imgs" />
+       <title>
+                    CRYPTOCURRENCTY MINT NFT TOKEN PAGE
+       </title>
+        </head>
+         <body>
+          <p>Welcome to the CCMT page on Github!</p>
+           </body>
+         </html>
 
-You can use the [editor on GitHub](https://github.com/Cryptocurrency-Mint-NFT-Token/CCMT/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
